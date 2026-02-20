@@ -2,22 +2,34 @@
 
 let arr = [1, 2, 3, 6, 9, 2, 4];
 
-function myArray(arr) {
-    let newArr = [];
-    this.judemap = function (callback) {
-        for(let i = 0; i < this.length - 1; i++) {
+class myArray{
+    constructor(arr) {
+        this.arr = arr;
+        this.newArr = [];
+    }
 
-            let transformedValue = callback(arr[i]);
+    judeMap(myCallback) {
+        let x = this.arr;
+        let y = this.newArr;
+        for(let i = 0; i <= x.length - 1; i++) {
 
-            newArr.push(transformedValue);
+            let transformedValue = myCallback(x[i]);
+
+            //console.log(transformedValue);
+
+            y.push(transformedValue);
         }
 
-        return newArr;
+        //console.log(y);
+
+        return y;
     }
 }
 
-console.log(myArray);
 
-let res = myArray(arr).judemap((num) => num + 1);
 
-console.log(res);
+let res = new myArray(arr);
+
+res.judeMap((num) => num * 2);
+
+console.log(res.newArr);
