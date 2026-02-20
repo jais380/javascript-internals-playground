@@ -21,8 +21,6 @@ class myArray{
         }
 
         //console.log(y);
-
-        return y;
     }
 }
 
