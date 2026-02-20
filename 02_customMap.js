@@ -11,23 +11,26 @@ class myArray{
     judeMap(myCallback) {
         let x = this.arr;
         let y = this.newArr;
+
+        // Iterates each value of the array
         for(let i = 0; i <= x.length - 1; i++) {
 
+            // Transforms each value of the array via callback
             let transformedValue = myCallback(x[i]);
 
-            //console.log(transformedValue);
 
+            // Appends all the transformed values into a new array
             y.push(transformedValue);
         }
-
-        //console.log(y);
     }
 }
 
 
-
+// Creating new object
 let res = new myArray(arr);
 
+// Mapping demo - returns object of arr and newArr
 res.judeMap((num) => num * 2);
 
+// Prints only newArr
 console.log(res.newArr);
