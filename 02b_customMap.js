@@ -2,9 +2,10 @@ Array.prototype.judeMap = function (myCallback) {
 
     let arr = [];
 
-    for(let i = 0; i <
-        this.length; i++) {
+    // Iterates each value of the array
+    for(let i = 0; i < this.length; i++) {
 
+        // Transforms each value of the array via callback and pushes it into the array
         arr.push(myCallback(this[i]));
     }
 
