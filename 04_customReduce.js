@@ -30,4 +30,4 @@ Array.prototype.judeReduce = function(myCallback, initialValue) {
 // using my custom .judeReduce()
 let result2 = arr.judeReduce((acc, cur) => acc + cur, 0);
 
-console.log(`Result of normal JS reduce - ${result2}`);
+console.log(`Result of my custom judeReduce - ${result2}`);
