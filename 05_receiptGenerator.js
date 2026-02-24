@@ -14,8 +14,8 @@ console.log(cart);
 
 const taxedProducts = cart.map((item) => item.price + (item.price * 0.1));
 
-console.log(taxedProducts);
+console.log(`Prices of cart items with 10% value added tax -> ${taxedProducts}`);
 
 const finalPrice = taxedProducts.reduce((acc, cur) => acc + cur, 0);
 
-console.log(finalPrice);
+console.log(`Total price of items -> ${finalPrice}`);
