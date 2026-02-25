@@ -4,7 +4,7 @@ const serverLogs = [
   { timestamp: '10:00:05', status: '401', ip: '10.0.0.50', message: 'Invalid Password' },
   { timestamp: '10:00:07', status: '401', ip: '10.0.0.50', message: 'Invalid Password' },
   { timestamp: '10:00:10', status: '200', ip: '192.168.1.5', message: 'Login Success' },
-  { timestamp: '10:00:15', status: '401', ip: '172.16.0.1', message: 'User Not Found' }
+  { timestamp: '10:00:15', status: '401', ip: '172.16.0.1', message: 'Invalid Passwor' }
 ];
 
 
