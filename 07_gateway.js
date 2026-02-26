@@ -1,3 +1,4 @@
+// Users data
 const users = [
     {name: 'Jude', age: '88', hasSubscription: true, role: 'admin'},
     {name: 'Simon', age: '9', hasSubscription: false, role: 'guest'},
@@ -8,6 +9,8 @@ const users = [
     {name: 'Drago', age: '25', hasSubscription: true, role: 'guest'}
 ]
 
+
+// .map() used to perform middleware checks to display status message for different users
 const statusMessages = users.map((user) => user.role === 'admin' ? "Access Granted: Welcome Boss" :
 
             user.hasSubscription && user.age > 18 ? "Access Granted: Enjoy the Pro features" : "Access Denied: Please upgrade or check age");
