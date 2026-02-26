@@ -1,4 +1,4 @@
-// Users data
+// List of Users data
 const users = [
     {name: 'Jude', age: '88', hasSubscription: true, role: 'admin'},
     {name: 'Simon', age: '9', hasSubscription: false, role: 'guest'},
