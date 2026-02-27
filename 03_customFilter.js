@@ -37,7 +37,7 @@ const result2 = arr.judeFilter((num) => num % 2 === 0 && num !== 0);
 console.log(`Result of my custom filter - ${result2}`);
 
 
-
+// List of Users data
 const users = [
     {name: 'Jude', age: '88', hasSubscription: true, role: 'admin'},
     {name: 'Simon', age: '9', hasSubscription: false, role: 'guest'},
@@ -49,7 +49,7 @@ const users = [
 ]
 
 
-
+// .map() used to perform middleware checks to display status message for different users
 const statusMessages = users.map((user) => user.role === 'admin' ? "Access Granted: Welcome Boss" :
 
             user.hasSubscription && user.age > 18 ? "Access Granted: Enjoy the Pro features" : "Access Denied: Please upgrade or check age");
