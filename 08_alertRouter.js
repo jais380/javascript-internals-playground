@@ -1,3 +1,4 @@
+// Users data
 users = [
     {username: 'Jude', isOnline: true, notifictionsEnabled: true, securityLevel: 'high'},
     {username: 'Johnny', isOnline: true, notifictionsEnabled: false, securityLevel: 'low'},
@@ -9,7 +10,7 @@ users = [
     {username: 'Judith', isOnline: false, notifictionsEnabled: false, securityLevel: 'low'},
 ];
 
-
+// Instructions to be executed when certain conditions are met
 const instructions = users.map((user) => {
     return !user.notifictionsEnabled
         ? "Mute: User opted out"
@@ -20,5 +21,5 @@ const instructions = users.map((user) => {
                 : "Queue: Save for later login"
 });
 
-
+// print final result
 console.log(instructions);
