@@ -1,5 +1,5 @@
 // Users data.
-users = [
+const users = [
     {username: 'Jude', isOnline: true, notifictionsEnabled: true, securityLevel: 'high'},
     {username: 'Johnny', isOnline: true, notifictionsEnabled: false, securityLevel: 'low'},
     {username: 'Jimmy', isOnline: false, notifictionsEnabled: true, securityLevel: 'high'},
