@@ -1,4 +1,6 @@
-console.log(40);
+setTimeout(() => {
+    console.log('Javascript');
+}, 1000)
 
 
 console.log("Jude");
@@ -10,6 +12,11 @@ setTimeout(() => {
 
 
 console.log(60);
+
+
+setTimeout(() => {
+    console.log('in');
+}, 0)
 
 
 console.log(105);
