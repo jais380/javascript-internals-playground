@@ -10,13 +10,18 @@ const markMass2 = 95;
 const johnHeight2 = 1.76;
 const johnMass2 = 85;
 
+// Body mass function
 function bodyMassIndex(markmass, markheight, johnmass, johnheight) {
+
+    // calculations
     const markBMI = markmass / markheight ** 2;
     const johnBMI = johnmass / johnheight ** 2;
 
+    // Boolean condition
     const markHigherBMI = markBMI > johnBMI;
     console.log(markHigherBMI);
 
+    // To get the correct message
     if (markHigherBMI) {
         console.log(`Mark's BMI ${markBMI} is greater than John's ${johnBMI}`);
     }
