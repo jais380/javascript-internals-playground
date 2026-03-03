@@ -1,14 +1,14 @@
 // Body mass index challenge.
 
-let markHeight1 = 1.69;
-let markMass1 = 78;
-let johnHeight1 = 1.95;
-let johnMass1 = 92;
+const markHeight1 = 1.69;
+const markMass1 = 78;
+const johnHeight1 = 1.95;
+const johnMass1 = 92;
 
-let markHeight2 = 1.88;
-let markMass2 = 95;
-let johnHeight2 = 1.76;
-let johnMass2 = 85;
+const markHeight2 = 1.88;
+const markMass2 = 95;
+const johnHeight2 = 1.76;
+const johnMass2 = 85;
 
 function bodyMassIndex(markmass, markheight, johnmass, johnheight) {
     const markBMI = markmass / markheight ** 2;
