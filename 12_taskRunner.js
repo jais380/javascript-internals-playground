@@ -10,3 +10,24 @@ const tasks = [
 
 const cleanTasks = tasks.filter((task) => task.isValid);
 
+function taskRunner(cleanTasks) {
+  for(let i= 0; i < cleanTasks.length; i++) {
+    setTimeout(() => {
+
+      let message = cleanTasks[i].priority === "high"
+                            ? `[URGENT] Running ${cleanTasks[i].taskName}...`
+                            : `[Routine] Running ${cleanTasks[i].taskName}...`;
+
+      console.log(message);
+
+    }, 2000 * i);
+  }
+}
+
+taskRunner(cleanTasks);
+
+console.log("");
+
+console.log(`>>>>>>>> Total tasks queued for execution: ${cleanTasks.length} <<<<<<<<`);
+
+console.log("");
