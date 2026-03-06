@@ -4,7 +4,7 @@
 const value1 = {a: "Jude", b: "Tired"};
 
 // Object destructured.
-const {name, status} = value1;
+const {a: name, b: status} = value1;
 
 // Print message.
 console.log(`${name} is very ${status}`);
