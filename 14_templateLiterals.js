@@ -1,4 +1,4 @@
-let name = 'James';
+let name = 'James'; // Either "" or ''
 let reg = 5*5;
 
 
