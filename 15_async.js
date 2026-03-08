@@ -22,7 +22,7 @@ getUsersFromFacebook().then((data) => {
     return data.response[1];
 })
 .then((res) => {
-    console.log(`The name of in the returned data is ${res.name}`);
+    console.log(`The name of the user in the returned data is ${res.name}`);
 })
 .catch((err) => {
     console.log(err);
