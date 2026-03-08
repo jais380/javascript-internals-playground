@@ -1,4 +1,4 @@
-// Set Timeout use case
+// Set Timeout use case.
 setTimeout(() => {console.log("I am Atomic!!");}, 0);
 
 // Promises use case
@@ -15,7 +15,7 @@ async function getUsersFromFacebook() {
     return prom;
 }
 
-// Handling data returned by promise
+// Handling data returned by promise.
 getUsersFromFacebook().then((data) => {
     console.log(data);
 
@@ -28,6 +28,6 @@ getUsersFromFacebook().then((data) => {
     console.log(err);
 })
 
-// Normal print
+// Normal print.
 
 console.log(`I am the first!!`);
