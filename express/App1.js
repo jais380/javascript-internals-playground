@@ -3,6 +3,7 @@ import express from "express"
 const app = express();
 const port = 3000;
 
+// Route setup
 app.get("/", (req, res) => {
     const data = [
         {name: "Jude", age: "50", isActive: true, isAdmin: true},
@@ -30,7 +31,7 @@ app.get("/", (req, res) => {
 })
 
 
-
+// Port setup
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
