@@ -2,7 +2,7 @@ import express from 'express';
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); // In order for express to parse the JSON data
 
 const port = 3000;
 const students = [];
