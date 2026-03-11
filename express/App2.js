@@ -26,6 +26,11 @@ app.post("/add", (req, res) => {
 });
 
 
+app.get("/list", (req, res) => {
+
+    res.send(students);
+})
+
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
