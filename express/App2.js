@@ -22,6 +22,8 @@ app.post("/add", (req, res) => {
         const newStudent = {id, full_name, email};
 
         students.push(newStudent);
+
+        res.status(201).send(`${newStudent.full_name} added successfully`);
     }
 });
 
