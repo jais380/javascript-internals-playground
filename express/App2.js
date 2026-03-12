@@ -46,6 +46,18 @@ app.get("/list/:id", (req, res) => {
     res.status(200).send(student);
 });
 
+app.patch("/list/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+
+    const student = students.find(s => s.id === id);
+
+    if (!student) {
+        res.status(401).send("Student not found");
+    }
+
+    res.status(200).send(student);
+});
+
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
