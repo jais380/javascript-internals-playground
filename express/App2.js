@@ -35,25 +35,29 @@ app.get("/list", (req, res) => {
 
 app.get("/list/:id", (req, res) => {
 
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id); // get the id as integer
 
-    const student = students.find(s => s.id === id);
+    const student = students.find(s => s.id === id); // find the object
 
     if (!student) {
-        res.status(401).send("Student not found");
+        res.status(404).send("Student not found");
     }
 
     res.status(200).send(student);
 });
 
 app.patch("/list/:id", (req, res) => {
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id); // get the id as integer
 
-    const student = students.find(s => s.id === id);
+    const student = students.find(s => s.id === id); // find the object
 
     if (!student) {
-        res.status(401).send("Student not found");
+        res.status(404).send("Student not found");
     }
+
+    // Update only provided field
+    Object.assign(student, req.body); // Assign the request body to the
+                                      // relevant object field
 
     res.status(200).send(student);
 });
