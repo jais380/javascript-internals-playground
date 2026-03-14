@@ -25,13 +25,13 @@ app.post("/add", (req, res) => {
         // For automatic id creation
         students.push({id: count++, ...newStudent}); // Store data
 
-        res.status(201).json({ "message": `${newStudent.full_name} added successfully` });
+        res.status(201).json({ message: `${newStudent.full_name} added successfully` });
     }
 });
 
 app.get("/list", (req, res) => {
 
-    res.status(200).send(students); // get data
+    res.status(200).json({message: students}); // get data
 });
 
 app.get("/list/:id", (req, res) => {
@@ -44,7 +44,7 @@ app.get("/list/:id", (req, res) => {
         res.status(404).send("Student not found");
     }
 
-    res.status(200).json(student);
+    res.status(200).json({data: student});
 });
 
 // PATCH: Partial Update
@@ -59,7 +59,7 @@ app.patch("/list/:id", (req, res) => {
     // Merge only provided fields
     Object.assign(student, req.body);
 
-    res.status(200).json(student);
+    res.status(200).json({data: student});
 });
 
 
@@ -78,7 +78,7 @@ app.put("/list/:id", (req, res) => {
         email: req.body.email
     };
 
-    res.status(200).json(students[index]);
+    res.status(200).json({data: students[index]});
 });
 
 
@@ -89,7 +89,7 @@ app.delete("/list/:id", (req, res) => {
     const index = students.findIndex(s => s.id === id);
     if (index !== -1) {
         students.splice(index, 1);
-        res.status(200).json(`Student with id ${id} deleted successfully`);
+        res.status(200).json({message: `Student with id ${id} deleted successfully`});
     } else {
         res.status(404).send("Student not found");
     }
