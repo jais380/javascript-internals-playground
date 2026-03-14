@@ -47,20 +47,52 @@ app.get("/list/:id", (req, res) => {
     res.status(200).send(student);
 });
 
+// PATCH: Partial Update
 app.patch("/list/:id", (req, res) => {
-    const id = parseInt(req.params.id); // get the id as integer
-
-    const student = students.find(s => s.id === id); // find the object
+    const id = parseInt(req.params.id);
+    const student = students.find(s => s.id === id);
 
     if (!student) {
-        res.status(404).send("Student not found");
+        return res.status(404).send("Student not found"); // Added return
     }
 
-    // Update only provided field
-    Object.assign(student, req.body); // Assign the request body to the
-                                      // relevant object field
+    // Merge only provided fields
+    Object.assign(student, req.body);
 
-    res.status(200).send(student);
+    res.status(200).json(student);
+});
+
+
+app.put("/list/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const index = students.findIndex(s => s.id === id);
+
+    if (index === -1) {
+        return res.status(404).send("Student not found"); // Added return
+    }
+
+    // Replace the entire object
+    students[index] = {
+        id: id,
+        full_name: req.body.full_name,
+        email: req.body.email
+    };
+
+    res.status(200).json(students[index]);
+});
+
+
+app.delete("/list/:id", (req, res) => {
+    const id = parseInt(req.params.id); // get the id as integer
+
+    // Remove the student from the array
+    const index = students.findIndex(s => s.id === id);
+    if (index !== -1) {
+        students.splice(index, 1);
+        res.status(200).send(`Student with id ${id} deleted successfully`);
+    } else {
+        res.status(404).send("Student not found");
+    }
 });
 
 app.listen(port, () => {
