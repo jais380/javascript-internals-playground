@@ -25,7 +25,7 @@ app.post("/add", (req, res) => {
         // For automatic id creation
         students.push({id: count++, ...newStudent}); // Store data
 
-        res.status(201).send(`${newStudent.full_name} added successfully`);
+        res.status(201).json(`${newStudent.full_name} added successfully`);
     }
 });
 
@@ -44,7 +44,7 @@ app.get("/list/:id", (req, res) => {
         res.status(404).send("Student not found");
     }
 
-    res.status(200).send(student);
+    res.status(200).json(student);
 });
 
 // PATCH: Partial Update
@@ -89,7 +89,7 @@ app.delete("/list/:id", (req, res) => {
     const index = students.findIndex(s => s.id === id);
     if (index !== -1) {
         students.splice(index, 1);
-        res.status(200).send(`Student with id ${id} deleted successfully`);
+        res.status(200).json(`Student with id ${id} deleted successfully`);
     } else {
         res.status(404).send("Student not found");
     }
