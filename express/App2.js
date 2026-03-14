@@ -8,6 +8,7 @@ const port = 3000;
 const students = [];
 let count = 1;
 
+
 app.post("/add", (req, res) => {
 
     console.log(req.body);
@@ -29,10 +30,12 @@ app.post("/add", (req, res) => {
     }
 });
 
+
 app.get("/list", (req, res) => {
 
     res.status(200).json({message: students}); // get data
 });
+
 
 app.get("/list/:id", (req, res) => {
 
@@ -47,7 +50,7 @@ app.get("/list/:id", (req, res) => {
     res.status(200).json({data: student});
 });
 
-// PATCH: Partial Update
+
 app.patch("/list/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const student = students.find(s => s.id === id);
