@@ -25,7 +25,7 @@ app.post("/add", (req, res) => {
         // For automatic id creation
         students.push({id: count++, ...newStudent}); // Store data
 
-        res.status(201).json(`${newStudent.full_name} added successfully`);
+        res.status(201).json({ "message": `${newStudent.full_name} added successfully` });
     }
 });
 
