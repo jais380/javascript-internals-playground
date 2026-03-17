@@ -1,14 +1,14 @@
 import express from 'express'
-import { addproduct, getproducts, getProductsById, updateProductPartial, updateProduct, deleteProduct } from './appUtils.js';
+import { addProduct, getProducts, getProductsById, updateProductPartial, updateProduct, deleteProduct } from './appUtils.js';
 
 const app = express();
 const port = 3001; //port
 
 app.use(express.json()) //middleware
 
-app.post('/add', addproduct)
+app.post('/add', addProduct)
 
-app.get('/', getproducts)
+app.get('/', getProducts)
 
 app.get('/:id', getProductsById)
 
