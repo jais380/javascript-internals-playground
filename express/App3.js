@@ -6,7 +6,6 @@ const port = 3001; //port
 
 app.use(express.json()) //middleware
 
-
 app.post('/add', addproduct)
 
 app.get('/', getproducts)
