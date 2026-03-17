@@ -57,8 +57,10 @@ export const updateProduct = (req, res) => {
     // Replace the entire object
     products[index] = {
         id: id,
-        full_name: req.body.full_name,
-        email: req.body.email
+        productName: req.body.product,
+        price: req.body.price,
+        quantity: req.body.quantity,
+        inStock: req.body.inStock
     };
 
     res.status(200).json({data: products[index]});
