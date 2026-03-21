@@ -1,0 +1,11 @@
+# --- Node / React ---
+node_modules/
+dist/
+build/
+.eslintcache
+
+# --- IDEs / System ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
